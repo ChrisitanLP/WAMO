@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Odoo
+*.log
+filestore/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs específicos del proyecto
+logs/
+log/
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Directorios
+data/

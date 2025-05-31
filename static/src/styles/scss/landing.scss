@@ -1,0 +1,119 @@
+$spacing-base: 1rem;
+$spacing-xs: 0.3125rem;  // 5px
+$spacing-sm: 0.625rem;   // 10px
+$spacing-md: 0.9375rem;  // 15px
+$spacing-lg: 1.25rem;    // 20px
+$spacing-xl: 1.5625rem;  // 25px
+
+$breakpoint-mobile: 768px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+#landing_custom_app{
+    .landing {
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: calc(98vh - 60px);
+        }
+
+        &-section {        
+            width: 50%;
+            height: 100vh;
+            padding: $spacing-lg;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+            &--explore {
+                background-color: #00BFA5;
+                color: $white;
+            }
+
+            &--connect {
+                background-color: #f0f2f5;
+                color: #383636;
+            }
+        }
+
+        &-content {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        &-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: $spacing-base;
+        }
+
+        &-description {
+            font-size: 1.2rem;
+            margin-bottom: $spacing-lg;
+        }
+
+        &-button {
+            display: inline-block;
+            padding: $spacing-base $spacing-lg;
+            font-size: $spacing-base;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: $border-radius;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+
+            &--explore {
+                background-color: #128c7e;
+                color: #fff;
+
+                &:hover {
+                    background-color: darken(#128c7e, 10%);
+                    text-decoration: none;
+                }
+            }
+
+            &--connect {
+                background-color: #18b9a7;
+                color: #fff;
+
+                &:hover {
+                    background-color: darken(#18b9a7, 10%);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    #landing_custom_app{
+        .landing {
+            &-container {
+                flex-direction: column;  // Apilar en móvil.
+                height: 100vh !important;            // No forzar altura completa.
+                min-height: auto;
+            }
+        
+            &-section {
+                width: 100%;             // Cada sección ocupa todo el ancho.
+                height: 50vh !important;             // Ajuste natural.
+                padding: 30px 15px;       // Espaciado cómodo para móvil.
+            }
+        
+            &-title {
+                font-size: 2rem;
+            }
+        
+            &-description {
+                font-size: 1rem;
+            }
+        
+            &-button {
+                padding: $spacing-sm $spacing-md;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

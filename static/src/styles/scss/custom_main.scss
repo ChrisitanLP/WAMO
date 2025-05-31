@@ -1,0 +1,987 @@
+$primary-color: #00BFA5;
+$secondary-color: #18b9a7;
+$btn-primary: #128c7e;
+$btn-primary-hover: #0e6d62;
+$btn-secondary: #18b9a7;
+$btn-secondary-hover: #159485;
+$text-light: #ffffff;
+$text-dark: #383636;
+
+$danger-color: #ad2016;
+$text-color: #555;
+$border-color: #ddd;
+$background-light: #f0f2f5;
+$white: #fff;
+$color-dark: #128c7e;
+$color-error: #b36e62;
+
+$primary-color: #18b9a7;
+$hover-color: #128C7E;
+$border-color-dm: #f0f0f0;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$text-primary: #333;
+$text-secondary: #666;
+
+$border-radius: 5px;
+$border-radius-sm: 5px;
+$border-radius-md: 7px;
+$border-radius-lg: 10px;
+
+$spacing-base: 1rem;
+$spacing-xs: 0.3125rem;  // 5px
+$spacing-sm: 0.625rem;   // 10px
+$spacing-md: 0.9375rem;  // 15px
+$spacing-lg: 1.25rem;    // 20px
+$spacing-xl: 1.5625rem;  // 25px
+
+$breakpoint-mobile: 768px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition($properties...) {
+    transition: $properties;
+}
+ 
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@mixin modal-base {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@mixin button-base-menu {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+        outline: 2px solid $text-dark;
+        outline-offset: 2px;
+    }
+}
+
+@mixin section-text($color) {
+    h1 {
+        color: $color;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-weight: bold;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    p {
+        color: $color;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+}
+
+@mixin section-base {
+    width: 50%;
+    height: 100vh;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+  
+@mixin button-general {
+    display: inline-block;
+    padding: $spacing-base $spacing-lg;
+    font-size: $spacing-base;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: $border-radius;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+  
+@mixin flex-container($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin grid-container($columns, $gap) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($columns, 1fr));
+    gap: $gap;
+}
+
+@mixin transition($properties...) {
+    transition: map-get($properties, transform) $transition-duration ease,
+                map-get($properties, box-shadow) $transition-duration ease;
+}
+
+@mixin text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin search-box {
+    display: flex;
+    align-items: center;
+    padding: $spacing-sm;
+    background-color: $border-color;
+    border-radius: $border-radius-lg;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@mixin input-reset {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+}
+
+@mixin icon-styles {
+    color: $text-muted;
+    margin-right: $spacing-sm;
+    font-size: 1rem;
+}
+
+@mixin profile-picture {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: $spacing-sm;
+}
+
+@mixin image-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin hover-effect {
+    background-color: darken($background-color, 5%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@mixin color-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0.3125rem;
+}
+
+@mixin fixed-button {
+    position: fixed;
+    bottom: $spacing-lg;
+    right: $spacing-lg;
+    z-index: 10;
+}
+
+// Modal Mixins
+@mixin modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+@mixin modal-dialog {
+    max-width: 31.875rem;
+    margin: 5% auto;
+    width: 80%;
+}
+
+@mixin modal-content {
+    background-color: $background-color;
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+}
+
+@mixin modal-header {
+    border-bottom: 1px solid $border-color;
+    padding: $spacing-md;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin modal-body {
+    padding: $spacing-md;
+}
+
+@mixin modal-footer {
+    border-top: 1px solid $border-color;
+    padding: $spacing-md;
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-sm;
+}
+
+@mixin form-group {
+    margin-bottom: $spacing-md;
+    
+    label {
+        display: block;
+        margin-bottom: $spacing-xs;
+        font-weight: bold;
+    }
+}
+
+@mixin form-row {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+
+
+#authentication_whatsapp{
+    .whatsapp-auth-container {
+        @include flex-center;
+        min-height: 98vh;
+        background: linear-gradient(to bottom, $primary-color 50%, $background-light 50%);
+    }
+
+    .connection-list {
+        background-color: $background-light;
+        max-width: calc(100vh - 60px);
+        max-height: calc(100vh - 60px);
+        padding: 5vh;
+        border-radius: $border-radius-md;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-connection-btn,
+    .home-btn {
+        @include button-base;
+        background-color: $secondary-color;
+        color: $white;
+        padding: $spacing-sm $spacing-lg;
+        font-size: 16px;
+        margin-bottom: $spacing-lg;
+        
+        &:hover {
+            background-color: darken($secondary-
+            color, 10%);
+        }
+        
+        i {
+            margin-right: $spacing-sm;
+        }
+    }
+
+    .connections-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: $spacing-lg 0;
+        border: 1px solid $border-color;
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        
+        th {
+            background-color: $secondary-color;
+            color: $white;
+            font-weight: bold;
+            padding: $spacing-lg;
+            text-align: left;
+        }
+        
+        td {
+            padding: $spacing-lg;
+            border-bottom: 1px solid $border-color;
+            font-size: 16px;
+        }
+    }
+
+    .qr-modal,
+    .connection-modal {
+        @include modal-base;
+        
+        .modal-content {
+            background-color: $white;
+            margin: 5% auto;
+            padding: $spacing-lg;
+            border-radius: $border-radius-lg;
+            max-width: 90vh;
+        }
+    }
+
+    .connection-form {
+        .form-group {
+            margin-bottom: $spacing-md;
+            
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: $spacing-xs;
+            }
+            
+            input,
+            select {
+                width: 100%;
+                padding: $spacing-xs;
+                border: 1px solid $border-color;
+                border-radius: $border-radius-sm;
+            }
+        }
+        
+        .form-row {
+            display: flex;
+            gap: $spacing-md;
+            
+            .form-group {
+                flex: 1;
+            }
+        }
+    }
+}
+
+#menu_options_app {
+    .page_options_app {
+        @include flex-center;
+        justify-content: space-between;
+        min-height: calc(100vh - 60px);
+        max-width: 100%;
+        margin: 0 auto;
+
+        .section_options_app {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100vh;
+            padding: clamp(1rem, 3vw, 2rem);
+            text-align: center;
+            transition: background-color 0.3s ease;
+
+            a {
+                @include button-base-menu;
+            }
+
+            &.left_section_options_app {
+                background-color: $primary-color;
+                @include section-text($text-light);
+
+                .btn_application_app {
+                    background-color: $btn-primary;
+                    color: $text-light;
+                    
+                    &:hover, &:focus {
+                        background-color: $btn-primary-hover;
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+
+            &.right_section_options_app {
+                background-color: $background-light;
+                @include section-text($text-dark);
+
+                .btn_connection_app {
+                    background-color: $btn-secondary;
+                    color: $text-light;
+                    
+                    &:hover, &:focus {
+                        background-color: $btn-secondary-hover;
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .page_options_app {
+        flex-direction: column !important;
+        
+        .section_options_app {
+            width: 100% !important;
+            min-height: 50vh !important;
+            height: auto !important;
+            padding: clamp(1rem, 5vw, 1.5rem) !important;
+        }
+    }
+}
+
+@media print {
+    #menu_options_app {
+        .btn_application_app,
+        .btn_connection_app {
+            display: none;
+        }
+        
+        .section_options_app {
+            width: 100% !important;
+            page-break-inside: avoid;
+            background: none !important;
+            
+            h1, p {
+                color: #000 !important;
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section_options_app a {
+        transition: none;
+        
+        &:hover {
+            transform: none;
+        }
+    }
+}
+
+.error {
+    &-container {
+        @include flex-center;
+        height: 90vh;
+        background: linear-gradient(to bottom, $primary-color 50%, $background-light 50%);
+    }
+  
+    &-content {
+        max-width: 800px;
+        width: 100%;
+        padding: $spacing-lg;
+        background-color: $white;
+        border-radius: $border-radius * 2;
+        box-shadow: $box-shadow;
+        text-align: center;
+    }
+  
+    &-image {
+        img {
+            max-width: 40vh;
+            margin-bottom: $spacing-base;
+        }
+    }
+  
+    &-title {
+        font-size: 6rem;
+        color: $secondary-color;
+        margin-bottom: $spacing-xs;
+    }
+  
+    &-subtitle {
+        font-size: 2rem;
+        color: $secondary-color;
+        margin-bottom: $spacing-base;
+    }
+  
+    &-message {
+        font-size: 1rem;
+        color: lighten($text-dark, 20%);
+        margin-bottom: $spacing-md;
+        line-height: 1.5;
+    }
+  
+    &-details {
+        font-size: 0.8rem;
+        color: $color-error;
+        margin-top: $spacing-base;
+        font-weight: bold;
+    }
+}
+
+.landing {
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: calc(98vh - 60px);
+    }
+
+    &-section {
+        @include section-base;
+
+        &--explore {
+            background-color: $primary_color;
+            color: $white;
+        }
+
+        &--connect {
+            background-color: $background-light;
+            color: $text-dark;
+        }
+    }
+
+    &-content {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    &-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: $spacing-base;
+    }
+
+    &-description {
+        font-size: 1.2rem;
+        margin-bottom: $spacing-lg;
+    }
+
+    &-button {
+        @include button-general;
+
+        &--explore {
+            background-color: $color-dark;
+            color: $white;
+
+            &:hover {
+                background-color: darken($color-dark, 10%);
+                text-decoration: none;
+            }
+        }
+
+        &--connect {
+            background-color: $secondary-color;
+            color: $white;
+
+            &:hover {
+                background-color: darken($secondary-color, 10%);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+.contacts {
+    @include flex-container(column);
+    height: 100%;
+    background-color: $background-color;
+    
+    .search-container {
+        @include search-box;
+        margin: $spacing-md 0;
+        
+        .search-icon {
+            @include icon-styles;
+        }
+        
+        #search-input {
+            @include input-reset;
+            @include body-text;
+            width: 100%;
+            
+            &::placeholder {
+                color: $placeholder-color;
+            }
+        }
+    }
+    
+    .contacts-grid {
+        @include grid-container(1fr, $spacing-sm);
+        overflow-y: auto;
+        flex: 1;
+    }
+    
+    .contact-item {
+        @include flex-container(row);
+        align-items: center;
+        padding: $spacing-sm;
+        border-radius: $border-radius-sm;
+        @include transition(background-color, box-shadow);
+        
+        &:hover {
+            @include hover-effect;
+        }
+        
+        .color-line {
+            @include color-line;
+        }
+        
+        .profile-pic {
+            @include profile-picture;
+            
+            img {
+                @include image-cover;
+            }
+        }
+        
+        .contact-info {
+            @include flex-container(column);
+            flex: 1;
+            margin-left: $spacing-sm;
+            
+            .contact-name {
+                @include heading-text;
+                @include text-ellipsis;
+            }
+            
+            .contact-phone,
+            .contact-user {
+                @include body-text-small;
+                @include text-ellipsis;
+            }
+        }
+        
+        .contact-plus-icon {
+            @include icon-button;
+        }
+    }
+    
+    .add-contact-btn {
+        @include fixed-button;
+    }
+}
+
+.modal-contact {
+    @include modal-container;
+    
+    .modal-dialog {
+        @include modal-dialog;
+    }
+    
+    .modal-content {
+        @include modal-content;
+    }
+    
+    .modal-header {
+        @include modal-header;
+    }
+    
+    .modal-body {
+        @include modal-body;
+        
+        .form-group-contact {
+            @include form-group;
+        }
+        
+        .form-row-contact {
+            @include form-row;
+        }
+    }
+    
+    .modal-footer {
+        @include modal-footer;
+        
+        .btn-contact {
+            @include button-base;
+            
+            &.btn-primary-contact {
+                @include button-primary;
+            }
+            
+            &.btn-secondary-contact {
+                @include button-secondary;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .contacts {
+        .contacts-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .modal-dialog {
+            width: 95%;
+            margin: $spacing-md auto;
+        }
+    }
+}
+
+.default-messages {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px $shadow-color;
+}
+
+.default-messages-header {
+    padding: 1rem 0;
+    
+    .close-btn-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: none;
+        border: none;
+        color: $text-primary;
+        font-size: 1rem;
+        cursor: pointer;
+        
+        &:hover {
+            color: $secondary-color;
+        }
+        
+        i {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.messages-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.message-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid $border-color-dm;
+    border-radius: 5px;
+    gap: 1rem;
+    @include transition(transform 0.2s, box-shadow 0.2s);
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .color-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        border-radius: 4px 0 0 4px;
+    }
+    
+    .send-icon {
+        @include flex-center;
+        width: 40px;
+        height: 40px;
+        color: $secondary-color;
+    }
+    
+    .message-info {
+        flex: 1;
+        
+        .message-name {
+            font-weight: 600;
+            color: $text-primary;
+            margin-bottom: 0.25rem;
+        }
+        
+        .message-type {
+            color: $text-secondary;
+            font-size: 0.9rem;
+            
+            a {
+                color: $secondary-color;
+                text-decoration: none;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
+    .close-btn {
+        background: none;
+        border: none;
+        color: $text-secondary;
+        cursor: pointer;
+        padding: 0.5rem;
+        
+        &:hover {
+            color: $text-primary;
+        }
+    }
+}
+
+.add-message-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    
+    button {
+        @include flex-center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        border: none;
+        color: white;
+        font-size: 1.25rem;
+        box-shadow: 0 2px 8px rgba($secondary-color, 0.3);
+        @include transition(transform 0.2s, background-color 0.2s);
+        
+        &:hover {
+            transform: scale(1.05);
+            background-color: $hover-color;
+        }
+    }
+}
+
+.modal-message {
+    .modal-content {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .modal-header {
+        background-color: $secondary-color;
+        color: white;
+        padding: 1rem;
+        
+        .close {
+            color: white;
+            opacity: 1;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+        
+        label {
+            color: $text-primary;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-control {
+            border-radius: 4px;
+            border: 1px solid $border-color-dm;
+            
+            &:focus {
+                border-color: $secondary-color;
+                box-shadow: 0 0 0 2px rgba($secondary-color, 0.1);
+            }
+        }
+    }
+}
+
+// scss/responsive/_mobile.scss
+@media (max-width: $breakpoint-mobile) {
+    .landing {
+      &-container {
+        flex-direction: column;
+        min-height: 98vh;
+      }
+  
+      &-section {
+        width: 100%;
+        height: auto;
+        padding: $spacing-md;
+      }
+  
+      &-title {
+        font-size: 2rem;
+      }
+  
+      &-description {
+        font-size: 1rem;
+      }
+  
+      &-button {
+        padding: $spacing-sm $spacing-md;
+        font-size: 0.9rem;
+      }
+    }
+  
+    .error {
+      &-content {
+        margin: $spacing-base;
+        padding: $spacing-base;
+      }
+  
+      &-title {
+        font-size: 4rem;
+      }
+  
+      &-subtitle {
+        font-size: 1.5rem;
+      }
+    }
+
+    .connection-list {
+        max-width: 80vh;
+        padding: 3vh;
+    }
+    
+    .connections-table {
+        font-size: 0.9rem;
+        
+        th,
+        td {
+        padding: 0.7rem;
+        }
+    }
+    
+    .add-connection-btn,
+    .home-btn {
+        width: 50%;
+        justify-content: center;
+        font-size: 0.98rem;
+        padding: 0.7rem;
+    }
+    
+    .modal-content {
+        width: 90%;
+        padding: $spacing-md;
+    }
+    
+    .connection-form {
+        .form-row {
+        flex-direction: column;
+        }
+    }
+
+    .messages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-message {
+        margin: 1rem;
+        
+        .modal-dialog {
+            margin: 0;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .messages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+  

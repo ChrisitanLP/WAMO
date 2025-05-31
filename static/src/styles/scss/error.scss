@@ -1,0 +1,221 @@
+$wa-primary: #25D366;      // Verde principal de WhatsApp
+$wa-secondary: #128c7e;    // Verde oscuro de WhatsApp
+$wa-light-green: #DCF8C6;  // Verde claro para fondos (como en los mensajes)
+$wa-light-bg: #F0F2F5;     // Color de fondo claro (como en la interfaz)
+$wa-text: #4A4A4A;         // Color de texto primario
+$wa-text-light: #667781;   // Color de texto secundario
+$wa-error: #E74C3C;        // Color para errores
+
+/* Variables de espacio */
+$wa-spacing-xs: 5px;
+$wa-spacing-sm: 10px;
+$wa-spacing-md: 15px;
+$wa-spacing-lg: 25px;
+$wa-spacing-xl: 40px;
+
+/* Variables de border-radius */
+$wa-radius-sm: 8px;
+$wa-radius-md: 12px;
+$wa-radius-lg: 20px;
+$wa-radius-full: 50px;
+
+/* Variables de sombras */
+$wa-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.08);
+$wa-shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+$wa-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+/* Estilos para la página de error de WhatsApp API */
+.wa-error-main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: linear-gradient(to bottom, #00BFA5 50%, #F0F0F0 50%);
+}
+
+.wa-error-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.wa-error-content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.wa-error-image {
+    flex: 1;
+    background-color: $wa-light-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+    img {
+        max-width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+        
+        @media (min-width: 768px) {
+            max-height: 300px;
+        }
+    }
+}
+
+.wa-error-info {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+        align-items: center;
+    }
+}
+
+.wa-error-code {
+    font-size: 4rem;
+    font-weight: 700;
+    color: $wa-secondary;
+    margin: 0 0 10px;
+    line-height: 1;
+    
+    @media (min-width: 768px) {
+        font-size: 6rem;
+    }
+}
+
+.wa-error-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $wa-secondary;
+    margin: 0 0 20px;
+    
+    @media (min-width: 768px) {
+        font-size: 2rem;
+    }
+}
+
+.wa-error-description {
+    font-size: 1rem;
+    color: $wa-text;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.wa-error-details {
+    font-size: 0.9rem;
+    color: $wa-error;
+    background-color: rgba($wa-error, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.wa-error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.wa-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    gap: 8px;
+    
+    i {
+        font-size: 16px;
+    }
+    
+    &.wa-btn-primary {
+        background-color: $wa-secondary;
+        color: white;
+        
+        &:hover, &:focus {
+            background-color: darken($wa-secondary, 5%);
+            box-shadow: 0 4px 12px rgba($wa-secondary, 0.3);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+    }
+    
+    &.wa-btn-secondary {
+        border: 2px solid #18b9a7;
+        color: #18b9a7;
+        background-color: white;
+        
+        &:hover, &:focus {
+            background-color: rgba(#18b9a7, 0.1);
+            box-shadow: 0 4px 12px rgba(#18b9a7, 0.15);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+    }
+}
+
+/* Animaciones */
+.wa-error-code, .wa-error-title {
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.wa-error-description, .wa-error-details {
+    animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+.wa-error-actions {
+    animation: fadeIn 0.5s ease-out 0.4s both;
+}
+
+.wa-error-image img {
+    animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

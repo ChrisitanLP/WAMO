@@ -1,0 +1,349 @@
+// Variables
+$primary-color: #00BFA5;
+$secondary-color: #078677;
+$hover-color: #085249;
+$white: #fff;
+$shadow-light: 0 3px 6px rgba(0, 0, 0, 0.1);
+$scrollbar-color: #cac9c9;
+$scrollbar-hover: #a3a3a3;
+$background-light: #f5f0e9;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition($property...) {
+  transition: $property;
+}
+
+// Scrollbar styling
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbar-color transparent;
+  
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-color;
+    border-radius: 10px;
+    
+    &:hover {
+      background: $scrollbar-hover;
+    }
+  }
+}
+
+// Base styles
+html, body {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+}
+
+body > .oe_structure {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+}
+
+// Header styles
+#header_whatsapp {
+  .custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5vw;
+    background-color: $primary-color;
+    
+    .header-logo {
+      display: flex;
+      align-items: center;
+      
+      .custom-logo {
+        padding: 1px;
+        height: 2.2rem;
+      }
+      
+      .header-title {
+        margin-left: 0.625rem;
+        color: $white;
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+    }
+    
+    .custom-nav {
+      ul.nav-icons {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        
+        li {
+          margin-left: 7px;
+          
+          #chat-messages-btn {
+            display: none;
+          }
+          
+          button {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: none;
+            background-color: $secondary-color;
+            color: $white;
+            @include flex-center;
+            @include transition(background-color 0.3s, color 0.3s);
+            cursor: pointer;
+            
+            &:hover {
+              background-color: $hover-color;
+              color: $white;
+            }
+            
+            &.active {
+              background-color: $hover-color;
+              color: $white;
+            }
+            
+            .fa {
+              font-size: 0.9375rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main container styles
+#chats_messages_contacts_whatsapp {
+  .chats-and-contacts-container {
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    
+    .chats, .contacts, .status {
+      flex: 1;
+      padding: 1rem;
+      background-color: $white;
+      box-shadow: $shadow-light;
+      overflow-y: auto;
+    }
+    
+    .messages {
+      flex: 2;
+      height: calc(100vh - 60px);
+      overflow: hidden;
+      background-color: $background-light;
+      border-radius: 5px;
+      margin: 1px;
+      width: 100%;
+    }
+    
+    .chats {
+      max-height: calc(100vh - 3.75rem);
+      flex: 1;
+      overflow-y: auto;
+    }
+    
+    #dynamic-template {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 3.75rem);
+      flex: 1;
+      background: $white;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  #header_whatsapp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    
+    #chat-messages-btn {
+      display: block !important;
+    }
+  }
+  
+  #chats_messages_contacts_whatsapp {
+    margin-top: 59px;
+    
+    .close-btn-section {
+      display: block !important;
+    }
+    
+    .chats-and-contacts-container {
+      flex-direction: column;
+      
+      .chats,
+      .messages {
+        flex: none;
+        width: 100%;
+        height: auto;
+        overflow: auto;
+      }
+      
+      .products,
+      .contacts,
+      .default-messages {
+        width: 100%;
+        flex: 1;
+        margin: 0;
+        height: auto;
+        overflow-y: auto;
+        
+        .products-grid,
+        .messages-grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      
+      .messages {
+        display: none;
+        width: 100%;
+        height: calc(90.5vh - env(safe-area-inset-bottom, 0));
+        overflow-y: auto;
+        overflow: hidden;
+        margin: 0;
+        flex: 1;
+        order: 2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        
+        .message-media-sticker {
+          max-width: 12vh !important;
+          max-height: 12vh !important;
+        }
+        
+        .message-media-img {
+          max-height: 20vh !important;
+          width: auto;
+        }
+      }
+      
+      #dynamic-template {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        margin: 0;
+        flex: 1;
+        order: 3;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+// Tablet styles
+@media (min-width: 769px) and (max-width: 1280px) {
+  #header_whatsapp {
+    .custom-header {
+      .header-title {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  
+  #chats_messages_contacts_whatsapp {
+    overflow: hidden;
+    
+    .chats-and-contacts-container {
+      flex-direction: row;
+      overflow: hidden;
+      
+      .chats {
+        flex: 1.5;
+        overflow: auto;
+        max-height: calc(100vh - 3.75rem);
+      }
+      
+      .close-btn-section {
+        display: block !important;
+      }
+      
+      .messages, #dynamic-template {
+        flex: 2.5;
+        margin: 0;
+        overflow: hidden !important;
+        height: calc(100vh - 3.75rem);
+        
+        .message-media-sticker {
+          width: 15vh !important;
+          height: 15vh !important;
+        }
+        
+        .message-media-img {
+          width: 20vh !important;
+          height: auto !important;
+        }
+      }
+      
+      #dynamic-template {
+        overflow: hidden !important;
+        display: none;
+        height: 100vh;
+        flex: 2.5 !important;
+        z-index: 10;
+      }
+      
+      // Container state classes
+      &.chat-selected {
+        #dynamic-template {
+          display: none;
+        }
+        .messages {
+          display: block;
+        }
+      }
+      
+      &.contacts-selected,
+      &.products-selected,
+      &.status-selected,
+      &.default-messages-selected {
+        .chats {
+          display: block;
+          flex: 1.5;
+        }
+        .messages {
+          display: none;
+        }
+        #dynamic-template {
+          display: block;
+          flex: 2.5;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+<odoo>
+    <data>
+        <template id="contacts_modal_template">
+            <div class="modal fade modal-contact" 
+                 id="add-contact-modal" 
+                 tabindex="-1" 
+                 role="dialog" 
+                 aria-labelledby="contactModalLabel" 
+                 aria-hidden="true">
+                <div class="modal-dialog" id="modal-dialog-contact" role="document">
+                    <div class="modal-content" id="modal-content-contact">
+                        <t t-call="message_app.modal_header_template"/>
+                        <t t-call="message_app.modal_body_template"/>
+                        <t t-call="message_app.modal_footer_template"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Modal Header Template -->
+        <template id="modal_header_template">
+            <div class="modal-header" id="modal-header-contact">
+                <h5 class="modal-title" id="modal-title-contact">Añadir Contacto</h5>
+                <button type="button" 
+                        class="close" 
+                        id="header-close-modal-contact" 
+                        aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"/>
+                </button>
+            </div>
+        </template>
+
+        <!-- Modal Body Template -->
+        <template id="modal_body_template">
+            <div class="modal-body" id="modal-body-contact">
+                <form id="add-contact-form">
+                    <t t-call="message_app.contact_form_fields"/>
+                </form>
+            </div>
+        </template>
+
+        <!-- Form Fields Template -->
+        <template id="contact_form_fields">
+            <div class="form-group-contact">
+                <label for="contact_name">Nombre Contacto:</label>
+                <input type="text" 
+                       class="form-control" 
+                       id="contact_name" 
+                       name="name" 
+                       required="required"/>
+            </div>
+            
+            <div class="form-row-contact">
+                <div class="form-group-contact">
+                    <label for="contact-country_code">Código de País:</label>
+                    <select id="contact-country_code" class="form-control">                                               
+                        <option value="54">Argentina (+54)</option>
+                        <option value="57">Colombia (+57)</option>
+                        <option value="593">Ecuador (+593)</option>
+                        <option value="34">España (+34)</option>
+                        <option value="1">Estados Unidos (+1)</option>
+                        <option value="52">México (+52)</option>
+                        <option value="52">Perú (+51)</option>
+                    </select>
+                </div>
+                <div class="form-group-contact" id="message-content-group">
+                    <label for="contact_phone_number">Teléfono:</label>
+                    <input type="text" class="form-control" id="contact_phone_number" minlength="9" maxlength="9" name="phone_number" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 9);"/>
+                    <small id="phone-error" class="form-text text-danger" style="display: none;">Ingrese un número de teléfono válido.</small>
+                </div>
+            </div>
+            
+            <div class="form-group-contact">
+                <label for="contact_user">Seleccionar Usuario:</label>
+                <select id="contact_user" 
+                        class="form-control" 
+                        required="required">
+                    <option value="">Seleccionar Usuario</option>
+                </select>
+            </div>
+        </template>
+
+        <!-- Modal Footer Template -->
+        <template id="modal_footer_template">
+            <div class="modal-footer" id="modal-footer-contact">
+                <button type="button" 
+                        class="btn-contact btn-secondary-contact" 
+                        id="footer-close-modal-contact">Cerrar</button>
+                <button type="button" 
+                        class="btn-contact btn-primary-contact" 
+                        id="save-contact-btn">Guardar</button>
+            </div>
+        </template>
+    </data>
+</odoo>

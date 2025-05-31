@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <template id="scripts_base_general">
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/main.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/utils.js"></script>
+            
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/navigation/main.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/Responsive/main.js"></script>
+
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/template/modules/contacts.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/template/modules/messages.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/template/modules/products.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/general/template/main.js"></script>
+        </template>
+    </data>
+</odoo>

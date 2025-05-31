@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="landing_page" name="WhatsApp Landing Page">
+            <t t-call="message_app.whatsapp_base_layout">
+
+                <t t-set="title">Message App | Inicio</t>
+                <t t-set="additional_title">Conecta y gestiona tus mensajes</t>
+                <t t-set="page_class" t-value="'landing-page'"/>
+                
+                <body t-att-data-show-admin-error="show_admin_alert or 'false'">
+                    <div id="landing_custom_app">
+                        <div class="landing-container">
+                            <t t-call="message_app.landing_explore_section"/>
+                            <t t-call="message_app.landing_connect_section"/>
+                        </div>
+                    </div>
+                </body>
+
+                <t t-call="message_app.scripts_landing"></t>
+            </t>
+        </template>
+    </data>
+</odoo>    

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Plantilla para mostrar el mensaje de error 404 -->
+        <template id="error_template_message">
+            <t t-set="error_code" t-value="error_code or '404'"/>
+            <t t-set="error_title" t-value="error_title or 'Información no disponible'"/>
+            <t t-set="error_description" t-value="error_description or 'No pudimos cargar los datos desde la API.'"/>
+                
+            <div class="wa-error-container">
+                <div class="wa-error-content">
+                    <div class="wa-error-image">
+                        <img t-attf-src="/message_app/static/src/assets/img/wallpaper/{{error_code}}.png" t-att-alt="error_code + ' Error Image'"/>
+                    </div>
+                    <div class="wa-error-info">
+                            <h1 class="wa-error-code"><t t-esc="error_code"/></h1>
+                            <h3 class="wa-error-title"><t t-esc="error_title"/></h3>
+                            <p class="wa-error-description">
+                                <t t-esc="error_description"/><br/>
+                                Por favor, verifica tu conexión o intenta recargar la página.<br/>
+                                Si el problema persiste, contacta con el administrador del sitio.
+                            </p>
+                            <t t-if="error_message">
+                                <p class="wa-error-details" t-esc="error_message"></p>
+                            </t>
+                            <div class="wa-error-actions">
+                                <a href="/whatsapp/menu_opciones" class="wa-btn wa-btn-primary">
+                                    <i class="fa fa-home"></i> Volver al inicio
+                                </a>
+                                <a href="#" class="wa-btn wa-btn-secondary reload-page">
+                                    <i class="fa fa-refresh"></i> Recargar página
+                                </a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

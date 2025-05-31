@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Picker de emojis -->
+        <template id="emoji_picker">
+            <div id="emoji-picker" class="emoji-picker" aria-label="Selector de emojis">
+                <div class="emoji-picker-body" id="emoji-picker-body">
+                    <!-- El contenido se añadirá dinámicamente -->
+                </div>
+            </div>
+        </template>
+
+        <!-- Picker de stickers -->
+        <template id="sticker_picker">
+            <div id="sticker-picker" class="sticker-picker" aria-label="Selector de stickers">
+                <div class="sticker-picker-body" id="sticker-picker-body">
+                    <!-- El contenido se añadirá dinámicamente -->
+                </div>
+            </div>
+        </template>
+
+        <!-- Picker del botón "plus" -->
+        <template id="plus_picker">
+            <div id="plus-picker" aria-label="Opciones adicionales">
+                <div class="plus-picker-body" id="plus-picker-body">
+                    <!-- El contenido se añadirá dinámicamente -->
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

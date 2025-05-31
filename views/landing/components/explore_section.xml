@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="landing_explore_section" name="Landing Explore Section">
+            <section class="landing-section landing-section--explore">
+                <div class="landing-content">
+                    <h1 class="landing-title">¿Listo para utilizar la aplicación?</h1>
+                    <p class="landing-description">Explora nuestras funcionalidades</p>
+                    <a href="/whatsapp/messages_app" class="landing-button landing-button--explore">Ver más</a>
+                </div>
+            </section>
+        </template>
+    </data>
+</odoo>

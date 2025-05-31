@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="product_header">
+            <button id="close-products-btn-section" 
+                    class="close-btn-section">
+                <i class="fa fa-chevron-circle-left" aria-hidden="true"/>
+                <span>Regresar a Mensajes</span>
+            </button>
+        </template>
+    </data>
+</odoo>

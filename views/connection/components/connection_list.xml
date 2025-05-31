@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <template id="connection_list_section">
+            <div class="connection-list">
+                <!-- Add Connection Button -->
+                <button class="action-button open-modal-btn-connection">
+                    <i class="fa fa-plus-circle message-icon" aria-hidden="true"></i>
+                    <span class="text-white">Agregar Conexión</span>
+                </button>
+
+                <!-- Connections Table -->
+                <t t-call="message_app.connections_table"/>
+
+                <!-- Main Page Button -->
+                <a href="/whatsapp/messages_app">
+                    <button class="action-button ir_principal_page">
+                        <i class="fa fa-desktop message-icon" aria-hidden="true"></i>
+                        <span class="text-white">Pagina Principal</span>
+                    </button>
+                </a>
+            </div>
+        </template>
+    </data>
+</odoo>

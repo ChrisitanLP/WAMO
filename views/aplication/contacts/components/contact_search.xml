@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="contacts_search_template">
+            <div class="search-container">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" 
+                       id="search-input" 
+                       placeholder="Buscar Contactos..."
+                       t-att-aria-label="'Buscar Contactos'"/>
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="scripts_template_message">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            
+            <t t-call="message_app.scripts_base_aplication"/>
+            <t t-call="message_app.scripts_base_general"/>
+            <t t-call="message_app.scripts_base_message"/>
+        </template>
+    </data>
+</odoo>

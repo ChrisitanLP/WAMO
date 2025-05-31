@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Main Default Messages Template -->
+        <template id="default_messages_template">
+            <div class="default-messages">
+                <t t-call="message_app.header_component"/>
+                <t t-call="message_app.message_modal"/>
+                <t t-call="message_app.messages_grid"/>
+                <t t-call="message_app.add_message_button"/>
+            </div>
+        </template>
+    </data>
+</odoo>

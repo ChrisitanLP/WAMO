@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <!-- Template Modular para Sección de Lista de Chats -->
+        <template id="chat_list_section">
+            <t t-foreach="chats" t-as="chat">
+                <div class="chat-item" 
+                     t-att-data-chat-id="chat.id" 
+                     t-att-style="'border-left: 5px solid ' + (chat.user_id.connection_id.color or '#cccccc')">
+                    <!-- Foto de perfil -->
+                    <t t-call="message_app.chat_profile_pic"/>
+                    
+                    <!-- Información del chat -->
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            <t t-esc="chat.name"/>
+                        </div>
+                        
+                        <!-- Mostrar vista previa del mensaje si está configurado -->
+                        <t t-if="show_message_preview">
+                            <t t-call="message_app.chat_message_preview"/>
+                        </t>
+                    </div>
+                    
+                    <!-- Conteo de mensajes no leídos -->
+                    <t t-if="show_unread_count and chat.unread_count > 0">
+                        <div class="unread-count">
+                            <t t-esc="chat.unread_count"/>
+                        </div>
+                    </t>
+                    
+                    <!-- Botones de acción -->
+                    <t t-if="show_action_buttons">
+                        <div class="chat-actions">
+                            <div class="chat-close-icon" t-att-data-chat-id="chat.id">
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                            </div>
+                            <div class="chat-ready-icon" t-att-data-chat-id="chat.id">
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

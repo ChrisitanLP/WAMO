@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <template id="reply_component">
+            <div id="reply-container" class="reply-container" style="display: none;">
+                <div id="reply-message">
+                    <span id="reply-name"></span>
+                    <span id="reply-text"></span>
+                    <button id="cancel-reply-btn" aria-label="Cancelar respuesta">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

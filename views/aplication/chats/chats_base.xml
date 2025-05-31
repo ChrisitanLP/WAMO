@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <!-- Template Principal de Chats -->
+        <template id="chats_template">
+            <div class="chats">
+                <!-- Sección de chats atendidos -->
+                <div class="chats-section chats-section--attended">
+                    <t t-call="message_app.chat_list_section">
+                        <t t-set="chats" t-value="chats.filtered(lambda c: c.status == 'atendiendo' and c.user_attending_id.id == request.env.user.id)"/>
+                        <t t-set="show_message_preview" t-value="False"/>
+                        <t t-set="show_unread_count" t-value="False"/>
+                        <t t-set="show_action_buttons" t-value="True"/>
+                    </t>
+                </div>
+                
+                <!-- Sección de chats pendientes -->
+                <div class="chats-section chats-section--pending">
+                    <t t-call="message_app.chat_list_section">
+                        <t t-set="chats" t-value="chats.filtered(lambda c: c.status == 'pendiente')"/>
+                        <t t-set="show_message_preview" t-value="True"/>
+                        <t t-set="show_unread_count" t-value="True"/>
+                        <t t-set="show_action_buttons" t-value="False"/>
+                    </t>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

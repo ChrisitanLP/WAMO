@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <template id="contact_card">
+            <div class="contact-item" 
+                 t-att-data-contact-id="contact.id" 
+                 t-att-data-color-contact="contact.user_id.connection_id.color" 
+                 t-att-data-serialized="contact.serialized"
+                 t-att-data-user-id="contact.user_id.id"
+                 t-att-data-phone-number="contact.phone_number">
+                
+                <div class="color-line" 
+                     t-att-style="'background-color: ' + (contact.user_id.connection_id.color or '#ccc')"/>
+                
+                <div class="profile-pic"
+                    t-att-data-contact-id="contact.id"
+                    t-att-data-serialized="contact.serialized"
+                    t-att-data-user-id="contact.user_id.id"
+                    t-att-data-phone-number="contact.phone_number">
+                    <img t-att-src="contact.profile_pic_url or 'https://cdn.playbuzz.com/cdn/913253cd-5a02-4bf2-83e1-18ff2cc7340f/c56157d5-5d8e-4826-89f9-361412275c35.jpg'" alt="Profile Picture"/>
+                </div>
+                            
+                <div class="contact-info">
+                    <div class="contact-name">
+                        <t t-esc="contact.name"/>
+                    </div>
+                    <div class="contact-phone">
+                        <t t-esc="contact.phone_number"/>
+                    </div>
+                    <div class="contact-user">
+                        <t t-esc="contact.user_id.display_name"/>
+                    </div>
+                </div>
+                
+                <div class="contact-plus-icon">
+                    <i class="fa fa-plus"/>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

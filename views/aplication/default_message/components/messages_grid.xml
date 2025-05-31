@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="messages_grid">
+            <div class="messages-grid" role="list">
+                <t t-foreach="messages" t-as="message">
+                    <t t-call="message_app.message_item"/>
+                </t>
+            </div>
+        </template>
+    </data>
+</odoo>

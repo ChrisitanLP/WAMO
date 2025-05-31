@@ -1,0 +1,116 @@
+<odoo>
+    <data>
+        <template id="message_modal">
+            <div class="modal fade modal-message" 
+                 id="add-message-modal" 
+                 tabindex="-1" 
+                 role="dialog" 
+                 aria-labelledby="messageModalLabel" 
+                 aria-hidden="true">
+                <div class="modal-dialog" 
+                     role="document"
+                     id="modal-dialog-message">
+                    <div class="modal-content" 
+                         id="modal-content-message">
+                        <t t-call="message_app.modal_header"/>
+                        <t t-call="message_app.modal_body"/>
+                        <t t-call="message_app.modal_footer"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="modal_header">
+            <div class="modal-header" 
+                 id="modal-header-message">
+                <h5 class="modal-title"
+                    id="modal-title-message">
+                    Mensajes por Defecto
+                </h5>
+                <button type="button" 
+                        class="close" 
+                        id="header-close-modal"
+                        aria-label="Cerrar">
+                    <i class="fa fa-times" aria-hidden="true"/>
+                </button>
+            </div>
+        </template>
+
+        <template id="modal_body">
+            <div class="modal-body" id="modal-body-message">
+                <form id="add-message-form">
+                    <t t-call="message_app.form_fields"/>
+                </form>
+            </div>
+        </template>
+
+        <template id="form_fields">
+            <div class="form-row-message">
+                <div class="form-group-message">
+                    <label for="message-name">Descripción:</label>
+                    <input type="text" 
+                        class="form-control" 
+                        id="message-name" 
+                        required="required"/>
+                </div>
+                <div class="form-group-message">
+                    <label for="message-type">Tipo:</label>
+                    <select class="form-control" 
+                            id="message-type" 
+                            required="required">
+                        <option value="">Selecciona un tipo</option>
+                        <option value="text">Texto</option>
+                        <option value="location">Ubicación</option>
+                        <option value="image">Imagen</option>
+                        <option value="document">Documento</option>
+                        <option value="web_page">Página Web</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group-message" id="message-content-group">
+                <label for="message-content">Contenido:</label>
+                <textarea class="form-control" 
+                          id="message-content" 
+                          rows="3"/>
+            </div>
+            <div class="form-group-message" 
+                 id="pdf-file-group" 
+                 style="display: none;">
+                <label for="pdf-file">Archivo:</label>
+                <input type="file" 
+                       class="form-control" 
+                       id="pdf-file" 
+                       accept=".pdf,.jpg,.png,.jpeg"/>
+            </div>
+            <div class="form-group-message" 
+                 id="location-group" 
+                 style="display: none;">
+                <label for="latitude">Latitud:</label>
+                <input type="number" 
+                       class="form-control" 
+                       id="latitude" 
+                       step="any"/>
+                <label for="longitude">Longitud:</label>
+                <input type="number" 
+                       class="form-control" 
+                       id="longitude" 
+                       step="any"/>
+            </div>
+        </template>
+
+        <template id="modal_footer">
+            <div class="modal-footer" id="modal-footer-message">
+                <button type="button" 
+                        class="btn-message btn-secondary-message" 
+                        id="footer-close-modal">
+                    Cerrar
+                </button>
+                <button type="button" 
+                        class="btn-message btn-primary-message" 
+                        id="save-message-btn">
+                    Guardar
+                </button>
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <!-- Componente de navegación -->
+        <template id="navigation_component">
+            <div class="back-to-chats-btn">
+                <button aria-label="Regresar a chats">Regresar a Chats</button>
+            </div>
+            
+            <div class="chat-banner-container">
+                <!-- El banner del chat se añadirá aquí con JS -->
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="chat_message_preview">
+            <div class="last-message" t-att-class="chat.unread_count > 0 and 'highlighted' or ''">
+                <t t-call="message_app.message_type_indicator"/>
+            </div>
+        </template>
+    </data>
+</odoo>

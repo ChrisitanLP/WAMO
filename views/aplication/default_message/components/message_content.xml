@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <template id="message_content">
+            <t t-if="message.type == 'text'">
+                <span class="message-text" t-esc="message.text"/>
+            </t>
+            <t t-elif="message.type == 'location'">
+                <a t-att-href="'https://www.google.com/maps?q=' + str(message.location_latitude) + ',' + str(message.location_longitude)" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="location-link">
+                    Ver ubicación
+                </a>
+            </t>
+            <t t-elif="message.type == 'image'">
+                <span class="file-name" t-esc="message.file_name"/>
+            </t>
+            <t t-elif="message.type == 'document'">
+                <span class="file-name" t-esc="message.file_name"/>
+            </t>
+            <t t-elif="message.type == 'web_page'">
+                <a t-att-href="message.web_url" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="web-link">
+                    Ver página
+                </a>
+            </t>
+        </template>
+    </data>
+</odoo>

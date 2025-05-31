@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <template id="header_template_message">
+            <header id="header_whatsapp">
+                <div class="custom-header">
+                    <div class="header-logo">
+                        <img src="/message_app/static/src/assets/img/wallpaper/image-removebg-preview.png" alt="Logo" class="custom-logo"/>
+                        <span class="header-title">Whatsapp API</span>
+                    </div>
+                    <nav class="custom-nav">
+                        <ul class="nav-icons">
+                            <li><button id="chat-messages-btn" aria-label="Chat Messages"><i class="fa fa-commenting-o"></i></button></li>
+                            <li><button id="contacts-btn" aria-label="Contacts"><i class="fa fa-address-book"></i></button></li>
+                            <li><button id="products-btn" aria-label="Products"><i class="fa fa-tags"></i></button></li>
+                            <li><button id="messages-btn" aria-label="Messages"><i class="fa fa-comments"></i></button></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </template>
+    </data>
+</odoo>

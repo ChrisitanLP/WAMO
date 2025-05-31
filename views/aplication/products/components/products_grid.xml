@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="product_grid">
+            <div class="products-grid">
+                <t t-foreach="products" t-as="product">
+                    <t t-call="message_app.product_card"/>
+                </t>
+            </div>
+        </template>
+    </data>
+</odoo>

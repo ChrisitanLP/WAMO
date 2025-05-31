@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="add_message_button">
+            <div class="add-message-btn">
+                <button id="add-message-btn" 
+                        class="btn btn-primary"
+                        aria-label="Agregar nuevo mensaje">
+                    <i class="fa fa-plus message-icon" aria-hidden="true"/> 
+                </button>
+            </div>
+        </template>
+    </data>
+</odoo>

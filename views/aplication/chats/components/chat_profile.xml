@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <template id="chat_profile_pic">
+            <div class="profile-pic" t-att-data-chat-id="chat.id">
+                <img t-att-src="chat.profile_pic_url or '/whatsapp_module/static/img/default_profile.jpg'" 
+                     alt="Profile Picture"/>
+            </div>
+        </template>
+    </data>
+</odoo>

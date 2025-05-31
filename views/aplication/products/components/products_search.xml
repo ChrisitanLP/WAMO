@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="product_search">
+            <div class="search-container-products">
+                <i class="fa fa-search search-icon"/>
+                <input type="text" 
+                        id="search-input-products" 
+                        placeholder="Buscar Productos..."
+                        t-att-aria-label="'Buscar Productos'"/>
+            </div>
+        </template>
+    </data>
+</odoo>

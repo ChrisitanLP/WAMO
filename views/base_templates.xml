@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="whatsapp_base_layout" name="WhatsApp Base Layout">
+            <t t-call="website.layout">
+                <main t-attf-class="whatsapp-main-content #{page_class or ''}">
+                    <t t-raw="0"/>
+                </main>
+            </t>
+        </template>
+    </data>
+</odoo>

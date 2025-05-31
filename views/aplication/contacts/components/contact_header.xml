@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <template id="contacts_header_template">
+            <button id="close-contacts-btn-section" class="close-btn-section">
+                <i class="fa fa-chevron-circle-left" aria-hidden="true"/>
+                <span>Regresar a Mensajes</span>
+            </button>
+        </template>
+    </data>
+</odoo>

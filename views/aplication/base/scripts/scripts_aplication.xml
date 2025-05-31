@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="scripts_base_aplication">
+            <script type="text/javascript" src="/message_app/static/src/assets/js/aplication/chat_handler/main.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/aplication/emojis/main.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/aplication/stickers/main.js"></script>
+        </template>
+    </data>
+</odoo>

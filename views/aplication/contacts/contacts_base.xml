@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Main Contact Template -->
+        <template id="contacts_template">
+            <div class="contacts">
+                <t t-call="message_app.contacts_header_template"/>
+                <t t-call="message_app.contacts_search_template"/>
+                <t t-call="message_app.contacts_grid_template"/>
+                <t t-call="message_app.contacts_add_button_template"/>
+                <t t-call="message_app.contacts_modal_template"/>
+            </div>
+        </template>
+    </data>
+</odoo>

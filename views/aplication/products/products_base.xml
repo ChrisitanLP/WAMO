@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Template principal de productos -->
+        <template id="products_template">
+            <div class="products">
+                <t t-call="message_app.product_header"/>
+                <t t-call="message_app.product_search"/>
+                <t t-call="message_app.product_grid"/>
+                <t t-call="message_app.product_pagination"/>
+            </div>
+        </template>
+    </data>
+</odoo>

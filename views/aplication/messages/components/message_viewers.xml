@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <template id="media_viewers">
+            <!-- Lightbox para imágenes -->
+            <div id="lightbox_messages_whatsapp">
+                <div id="lightbox" class="lightbox" style="display: none;" role="dialog" aria-labelledby="lightbox-title">
+                    <span id="lightbox-download" class="lightbox-download" aria-label="Descargar">
+                        <i class="fa fa-download"></i>
+                    </span>
+                    <span id="lightbox-close" class="lightbox-close" aria-label="Cerrar">
+                        <i class="fa fa-times"></i>
+                    </span>
+                    <div id="lightbox-info" class="lightbox-info"></div>
+                    <img class="lightbox-content" id="lightbox-img" alt="Imagen ampliada"/>
+                    <p id="lightbox-text" class="lightbox-text"></p>
+                    <button id="prev-img" class="lightbox-nav" aria-label="Imagen anterior">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <button id="next-img" class="lightbox-nav" aria-label="Imagen siguiente">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <div id="lightbox-thumbnails" class="lightbox-thumbnails"></div>
+                </div>
+            </div>
+            
+            <!-- Lightbox para stickers -->
+            <div id="lightbox_stickers_whatsapp">
+                <div id="lightbox-sticker" class="lightbox-sticker" style="display: none;" role="dialog" aria-labelledby="sticker-title">
+                    <span id="lightbox-sticker-download" class="lightbox-download" aria-label="Descargar sticker">
+                        <i class="fa fa-download"></i>
+                    </span>
+                    <span id="lightbox-sticker-close" class="lightbox-close" aria-label="Cerrar">
+                        <i class="fa fa-times"></i>
+                    </span>
+                    <div id="lightbox-sticker-info" class="lightbox-info"></div>
+                    <img class="lightbox-sticker-content" id="lightbox-sticker-img" alt="Sticker ampliado"/>
+                </div>
+            </div>
+            
+            <!-- Lightbox para estados -->
+            <div id="lightbox_status_whatsapp">
+                <div id="lightbox-status" class="lightbox-status" style="display: none;" role="dialog" aria-labelledby="status-title">
+                    <span id="lightbox-status-download" class="lightbox-download" aria-label="Descargar estado">
+                        <i class="fa fa-download"></i>
+                    </span>
+                    <span id="lightbox-status-close" class="lightbox-close" aria-label="Cerrar">
+                        <i class="fa fa-times"></i>
+                    </span>
+                    <div id="lightbox-status-info" class="lightbox-info"></div>
+                    <img class="lightbox-status-content" id="lightbox-status-img" alt="Estado ampliado"/>
+                    <p id="lightbox-text" class="lightbox-text"></p>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

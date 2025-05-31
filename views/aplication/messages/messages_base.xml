@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Template principal de mensajes -->
+        <template id="messages_template">
+            <div class="messages">
+                <!-- Componente de navegación -->
+                <t t-call="message_app.navigation_component"/>
+                
+                <!-- Contenedor de mensajes -->
+                <div id="messages-container">
+                    <div class="chat-messages">
+                        <!-- Los mensajes se añadirán aquí con JS -->
+                    </div>
+                </div>
+                
+                <!-- Botón de desplazamiento -->
+                <div class="scroll-to-bottom-btn" id="scroll-to-bottom" style="display: none;">
+                    <button aria-label="Desplazar hacia abajo">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+                
+                <!-- Componentes de interacción -->
+                <t t-call="message_app.attend_button_component"/>
+                <t t-call="message_app.input_disabled_component"/>
+                <t t-call="message_app.reply_component"/>
+                
+                <!-- Componente de entrada de mensajes -->
+                <t t-call="message_app.message_input_component"/>
+                
+                <!-- Componentes modales y lightbox -->
+                <t t-call="message_app.edit_message_modal"/>
+                <t t-call="message_app.media_viewers"/>
+                
+                <!-- Pickers -->
+                <t t-call="message_app.emoji_picker"/>
+                <t t-call="message_app.sticker_picker"/>
+                <t t-call="message_app.plus_picker"/>
+                
+                <!-- Componente de vista previa de archivos -->
+                <t t-call="message_app.file_preview_component"/>
+            </div>
+            
+            <!-- Referencias a scripts (mantenidas como solicitado) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/basic/load_message.js"></script>
+        </template>
+    </data>
+</odoo>

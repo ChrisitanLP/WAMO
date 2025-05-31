@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="authentication_app" name="WhatsApp Authentication Layout" priority="50">
+            <t t-call="message_app.whatsapp_base_layout">
+
+                <t t-set="title">Message App | Autenticación</t>
+                <t t-set="additional_title">Conecta y gestiona tus mensajes</t>
+
+                <div id="authentication_whatsapp"> 
+                    <div class="whatsapp-auth-container">
+                        <t t-call="message_app.connection_list_section"/>
+                        <t t-call="message_app.qr_modal"/>
+                        <t t-call="message_app.connection_modal"/>
+                    </div>
+                </div>
+                
+                <t t-call="message_app.scripts_connection"></t>
+            </t>
+        </template>
+    </data>
+</odoo>

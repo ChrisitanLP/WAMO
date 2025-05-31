@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <template id="file_preview_component">
+            <div id="file-preview" class="file-preview">
+                <button id="close-file-preview" class="close-btn" aria-label="Cerrar vista previa">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <div class="file-preview-content">
+                    <img id="preview-image" src="" alt="Vista previa de imagen" style="display: none;"/>
+                    <video id="preview-video" style="display: none;"></video>
+                    <div id="preview-document" style="display: none;"></div>
+                    <textarea id="file-message" placeholder="Agrega un comentario..." aria-label="Comentario del archivo"></textarea>
+                    <button id="send-file" aria-label="Enviar archivo">
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

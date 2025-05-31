@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <template id="product_pagination">
+            <div t-if="products" class="d-flex justify-content-center mt-4">
+                <nav aria-label="Product navigation">
+                    <ul class="pagination">
+                        <li t-att-class="'page-item %s' % ('disabled' if page == 1 else '')">
+                            <a class="page-link" 
+                               t-att-href="'/api/products?page=%s&amp;limit=%s%s' % ((page or 1)-1, limit or 20, ('&amp;search=' + search) if search else '')"
+                               aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <span class="page-link" t-esc="page or 1"/>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" 
+                               t-att-href="'/api/products?page=%s&amp;limit=%s%s' % ((page or 1)+1, limit or 20, ('&amp;search=' + search) if search else '')"
+                               aria-label="Next">
+                                 <span aria-hidden="true">»</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </template>
+    </data>
+</odoo>

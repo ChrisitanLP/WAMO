@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <template id="scripts_base_message">
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/main.js"></script>
+
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/manager/chat_manager.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/manager/contact_manager.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/manager/drag_drop_manager.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/manager/file_preview_manager.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/manager/message_manager.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/manager/UI_manager.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/manager/message_loader.js"></script>
+
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/render/media_render.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/render/message_render.js"></script>
+            
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/service/chat_service.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/service/message_service.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/service/notification_service.js"></script>
+
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/utils/chat_info.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/utils/date_formatter.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/messages/utils/link_converter.js"></script>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <template id="scripts_landing">
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" 
+                        crossorigin="anonymous">
+            </script>
+            <script type="text/javascript"
+                        src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+                        defer="defer"
+                        crossorigin="anonymous">
+            </script>
+            <script type="text/javascript" 
+                        src="/message_app/static/src/assets/js/menu_options.js"
+                        defer="defer">
+            </script>
+        </template>
+    </data>    
+</odoo>

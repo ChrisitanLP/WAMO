@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <template id="scripts_base_basic">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/basic/pages.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/basic/emojis.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/basic/stickers.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/basic/documents.js"></script>
+            <script type="text/javascript" src="/message_app/static/src/assets/js/basic/websocket_integration.js"></script>
+        </template>
+    </data>
+</odoo>

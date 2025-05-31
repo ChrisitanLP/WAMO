@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="contacts_grid_template">
+            <div class="contacts-grid">
+                <t t-foreach="contacts" t-as="contact">
+                    <t t-call="message_app.contact_item_template"/>
+                </t>
+            </div>
+        </template>
+    </data>
+</odoo>

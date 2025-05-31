@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <template id="edit_message_modal">
+            <div id="editMessageModal" style="display: none;" role="dialog" aria-labelledby="edit-message-title" aria-modal="true">
+                <div class="modal-content">
+                    <!-- Barra superior con título e icono de cierre -->
+                    <div class="modal-header">
+                        <h4 id="edit-message-title" class="sr-only">Editar mensaje</h4>
+                        <span id="lightbox-close" class="lightbox-close" aria-label="Cerrar">
+                            <i class="fa fa-times"></i>
+                        </span>
+                    </div>
+                    <!-- Mensaje de vista previa -->
+                    <div class="message-preview">
+                        <div class="message-bubble">
+                            <span id="message-time">2:18 p.m.</span>
+                        </div>
+                    </div>
+                    <!-- Campo de entrada para editar el mensaje -->
+                    <div class="message-edit-input">
+                        <textarea id="edit-message-input" rows="1" placeholder="Escribe tu mensaje..." aria-label="Editar mensaje"></textarea>
+                        <button id="confirm-edit-btn" class="send-btn" aria-label="Confirmar edición">
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

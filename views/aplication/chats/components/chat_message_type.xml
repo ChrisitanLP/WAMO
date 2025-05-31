@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <template id="message_type_indicator">
+            <!-- URLs -->
+            <t t-if="chat.last_message_body.startswith('https://') or chat.last_message_body.startswith('http://')">
+                <i class="fa fa-link message-icon" aria-hidden="true"></i>
+                <span>URL</span>
+            </t>
+            
+            <!-- Tipos de mensajes multimedia -->
+            <t t-foreach="[
+                ('image', 'fa-image', 'Image'),
+                ('sticker', 'fa-sticky-note', 'Sticker'),
+                ('location', 'fa-map-marker', 'Ubicación'),
+                ('video', 'fa-video-camera', 'Video'),
+                ('vcard', 'fa-address-card', 'Contacto'),
+                ('document', 'fa-file', 'Documento'),
+                ('ptt', 'fa-microphone', 'Audio'),
+                ('audio', 'fa-microphone', 'Audio'),
+                ('revoked', 'fa-ban', 'Mensaje Eliminado'),
+                ('groups_v4_invite', 'fa-users', 'Invitación de Grupo')
+                ]" t-as="message_type">
+                <t t-if="chat.last_message_type == message_type[0]">
+                    <i t-att-class="'fa ' + message_type[1] + ' message-icon'" aria-hidden="true"></i>
+                    <span><t t-esc="message_type[2]"/></span>
+                </t>
+            </t>
+            
+            <t t-if="not (chat.last_message_body.startswith('https://') or chat.last_message_body.startswith('http://')) and chat.last_message_type not in ['image', 'sticker', 'document', 'revoked', 'ptt', 'location', 'vcard', 'audio', 'groups_v4_invite']">
+                <span>
+                    <t t-esc="chat.last_message_body[:35] + ('...' if len(chat.last_message_body) > 35 else '')"/>
+                </span>
+            </t>
+        </template>
+    </data>
+</odoo>

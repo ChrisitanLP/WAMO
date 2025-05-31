@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <template id="connections_table" name="Connections Table">
+            <table class="connections">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Color</th>
+                        <th>QR</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic Connections -->
+                    <t t-foreach="connections" t-as="connection">
+                        <tr t-att-data-connection-id="connection.id">
+                            <td t-esc="connection.id"/>
+                            <td t-esc="connection.name"/>
+                            <td t-esc="connection.phone_number"/>
+                            <td>
+                                <span class="color-box" t-att-style="'background-color: ' + connection.color"></span>
+                            </td>
+                            <td>
+                                <button class="qr-button open-modal-btn-qr" t-att-data-phone="connection.phone_number">
+                                    <i class="fa fa-qrcode" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="delete-button open-modal-btn-delete" t-att-data-connection-id="connection.id" id="btn_delete_connection">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </template>
+    </data>
+</odoo>

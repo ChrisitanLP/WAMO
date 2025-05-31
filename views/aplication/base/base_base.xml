@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="chats_and_contacts_template">
+            <t t-call="message_app.whatsapp_base_layout">
+                <t t-set="title">Message App | Mensajes</t>
+                <t t-set="additional_title">Conecta y gestiona tus mensajes</t>
+
+                <t t-call="web.layout">
+                    <t t-call="message_app.header_template_message"/>
+                    <div id="chats_messages_contacts_whatsapp">
+                        <div class="oe_structure chats-and-contacts-container">
+                            <t t-call="message_app.chats_template"/>
+                            <t t-call="message_app.messages_template"/>
+                            <div id="dynamic-template"></div>
+                        </div>
+                    </div>
+                    <t t-call="message_app.scripts_base_basic"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

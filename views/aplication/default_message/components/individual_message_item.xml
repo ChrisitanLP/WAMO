@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <template id="message_item">
+            <div class="message-item" 
+                 t-att-data-message-id="message.id" 
+                 draggable="true"
+                 role="listitem">
+                <div class="color-line" style="background-color: #e0ca04"/>
+                <div class="send-icon" t-att-data-message-id="message.id">
+                    <i class="fa fa-paper-plane" aria-hidden="true"/>
+                </div>
+                <div class="message-info">
+                    <div class="message-name" t-esc="message.name"/>
+                    <div class="message-type">
+                        <t t-call="message_app.message_content"/>
+                    </div>
+                </div>
+                <button class="close-btn" aria-label="Eliminar mensaje">
+                    <i class="fa fa-times"/>
+                </button>
+            </div>
+        </template>
+    </data>
+</odoo>

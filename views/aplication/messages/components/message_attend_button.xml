@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="attend_button_component">
+            <div id="attend-button-container">
+                <button id="attend-btn" class="attend-button" aria-label="Atender chat">Atender</button>
+            </div>
+        </template>
+    </data>
+</odoo>

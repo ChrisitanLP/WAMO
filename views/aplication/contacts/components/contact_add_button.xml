@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="contacts_add_button_template">
+            <div class="add-contact-btn">
+                <button id="add-contact-btn" 
+                        class="btn btn-primary"
+                        aria-label="Add New Contact">
+                    <i class="fa fa-plus message-icon" aria-hidden="true"/> 
+                </button>
+            </div>
+        </template>
+    </data>
+</odoo>

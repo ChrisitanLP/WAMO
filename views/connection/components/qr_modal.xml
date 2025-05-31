@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <template id="qr_modal" name="WhatsApp QR Modal">
+            <div class="modal-qr" id="qr-modal">
+                <div class="modal-content-qr">
+                    <span class="close-btn">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </span>
+                    <div class="qr-container">
+                        <!-- QR Code Display -->
+                        <div class="qr-code-section">
+                            <div id="qr-code-div" class="qr-code-img"></div>
+                            <p class="qr-instructions">Escanea este código con tu aplicación WhatsApp para sincronizar.</p>
+                        </div>
+                        
+                        <!-- QR Instructions -->
+                        <div class="qr-info-section">
+                            <h2>Para usar WhatsApp en tu computadora con ODOO:</h2>
+                            <ol>
+                                <li>Abre WhatsApp en tu teléfono.</li>
+                                <li>Toca <strong>Menú</strong> en Android o <strong>Ajustes</strong> en Iphone.</li>
+                                <li>Toca <strong>Dispositivos vinculados</strong> y, luego, <strong>Vincular un dispositivo.</strong></li>
+                                <li>Apunta tu teléfono hacia esta pantalla para escanear el código QR.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

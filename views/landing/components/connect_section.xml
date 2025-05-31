@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="landing_connect_section" name="Landing Connect Section">
+            <section class="landing-section landing-section--connect">
+                <div class="landing-content">
+                    <h1 class="landing-title">Genera una conexión</h1>
+                    <p class="landing-description">Inicia sesión con tu número</p>
+                    <a href="/whatsapp/connections" class="landing-button landing-button--connect">Conectarse</a>
+                </div>
+            </section>
+        </template>
+    </data>
+</odoo>

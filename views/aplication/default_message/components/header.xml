@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="header_component">
+            <header class="default-messages-header">
+                <button id="close-default-messages-btn-section" 
+                        class="close-btn-section"
+                        aria-label="Regresar a Mensajes">
+                    <i class="fa fa-chevron-circle-left" aria-hidden="true"/>
+                    <span>Regresar a Mensajes</span>
+                </button>
+            </header>
+        </template>
+    </data>
+</odoo>

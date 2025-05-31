@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="input_disabled_component">
+            <div id="input-disabled-container">
+                <p class="input-disabled-p">Este chat está siendo atendido por otro usuario.</p>
+            </div>
+        </template>
+    </data>
+</odoo>
